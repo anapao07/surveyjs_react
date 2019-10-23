@@ -270,7 +270,8 @@ class App extends Component {
   }
 
   render() {
-    var model = new Survey.Model(this.json);
+    const tempJson = JSON.parse(localStorage.getItem('Prueba')).surveyText;
+    var model = new Survey.Model(tempJson);
     return (
       <div className="App">
         <div className="App-header">
