@@ -260,6 +260,7 @@ class App extends Component {
     ]
   };
 
+
   onValueChanged(result) {
     console.log("value changed!");
   }
@@ -285,8 +286,8 @@ class App extends Component {
             onValueChanged={this.onValueChanged}
           />
           {/*If you do not want to show Survey Creator, comment the line below*/}
-          <h1>SurveyJS Creator in action:</h1>
-          <SurveyCreator />
+          {/* <h1>SurveyJS Creator in action:</h1>
+          <SurveyCreator /> */}
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.

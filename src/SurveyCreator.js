@@ -43,23 +43,29 @@ class SurveyCreator extends Component {
       showTranslationTab: false,
       showLogicTab: false,
       showPropertyGrid: true,
-      showJSONEditorTab: false
-    
-    
-  
+      showJSONEditorTab: false,
+      isAutoSave: true,
+      showState :true
   };
+ 
     this.surveyCreator = new SurveyJSCreator.SurveyCreator(
       "surveyCreatorContainer",
       options
     );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
+    this.surveyCreator.text = window.localStorage.getItem("Local Storage") || "";  
   }
   render() {
     return <div id="surveyCreatorContainer" />;
   }
+
   saveMySurvey = () => {
     console.log(JSON.stringify(this.surveyCreator.text));
   };
+
+
+
+  
 }
 
 export default SurveyCreator;
