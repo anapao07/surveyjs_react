@@ -53,7 +53,6 @@ class SurveyCreator extends Component {
       options
     );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
-    this.surveyCreator.text = window.localStorage.getItem("Local Storage") || "";  
   }
   render() {
     return <div id="surveyCreatorContainer" />;

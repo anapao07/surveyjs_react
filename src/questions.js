@@ -71,9 +71,9 @@ class nav extends Component {
           <h1>ejemplo:</h1>
           <SurveyCreator />
         </div>
-        <p className="App-intro">
+        {/* <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> */}
       </div>
     );
   }
