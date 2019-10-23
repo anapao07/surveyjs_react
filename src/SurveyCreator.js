@@ -60,7 +60,14 @@ class SurveyCreator extends Component {
   }
 
   saveMySurvey = () => {
-    console.log(JSON.stringify(this.surveyCreator.text));
+    //console.log(JSON.stringify(this.surveyCreator.text));
+    //console.log(this.surveyCreator.text);
+    const payload = {
+      surveyId: 'Prueba',
+      surveyText : this.surveyCreator.text
+    };
+
+    localStorage.setItem('Prueba', JSON.stringify(payload));
   };
 
 
