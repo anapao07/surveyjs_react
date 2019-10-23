@@ -35,6 +35,7 @@ widgets.ckeditor(SurveyKo);
 widgets.autocomplete(SurveyKo, $);
 widgets.bootstrapslider(SurveyKo);
 
+
 class SurveyCreator extends Component {
   surveyCreator;
   componentDidMount() {
@@ -46,14 +47,20 @@ class SurveyCreator extends Component {
       showJSONEditorTab: false,
       isAutoSave: true,
       showState :true
+      
+      
   };
+  
  
     this.surveyCreator = new SurveyJSCreator.SurveyCreator(
       "surveyCreatorContainer",
       options
+      
     );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
+    
   }
+  
   render() {
     return <div id="surveyCreatorContainer" />;
   }
@@ -61,11 +68,15 @@ class SurveyCreator extends Component {
   saveMySurvey = () => {
     //console.log(JSON.stringify(this.surveyCreator.text));
     //console.log(this.surveyCreator.text);
+    
+ 
     const payload = {
+      
       surveyId: 'Prueba',
       surveyText : this.surveyCreator.text
+      
     };
-
+  
     localStorage.setItem('Prueba', JSON.stringify(payload));
   };
 
