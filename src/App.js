@@ -30,9 +30,6 @@ Survey.StylesManager.applyTheme("default");
 
 class App extends Component {
 
-
-
-
   onValueChanged(result) {
     console.log("value changed!");
   }
@@ -53,8 +50,9 @@ class App extends Component {
           {/* <h2>Welcome to React with SurveyJS</h2> */}
         </div>
         <div className="surveyjs">
-          {/*If you want to show survey, uncomment the line below*/}
+          {/*If you want to show survey, uncommehhnt the line below*/}
           <h1>SurveyJS library in action:</h1>
+          <div id="surveyElement"></div>
           <Survey.Survey
             model={model}
             onComplete={this.onComplete}

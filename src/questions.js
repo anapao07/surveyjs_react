@@ -28,18 +28,8 @@ export {MyQuestion} from "./MyQuestion";
 
 Survey.StylesManager.applyTheme("default");
 
-widgets.icheck(Survey, $);
-widgets.select2(Survey, $);
-widgets.inputmask(Survey);
-widgets.jquerybarrating(Survey, $);
-widgets.jqueryuidatepicker(Survey, $);
-widgets.nouislider(Survey);
-widgets.select2tagbox(Survey, $);
-widgets.signaturepad(Survey);
-widgets.sortablejs(Survey);
-widgets.ckeditor(Survey);
-widgets.autocomplete(Survey, $);
-widgets.bootstrapslider(Survey);
+
+
 
 class nav extends Component {
  

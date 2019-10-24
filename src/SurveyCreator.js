@@ -15,21 +15,13 @@ import $ from "jquery";
 import "jquery-ui/ui/widgets/datepicker.js";
 import "select2/dist/js/select2.js";
 import "jquery-bar-rating";
+import "./file.js";
 
 import "icheck/skins/square/blue.css";
 
 import * as widgets from "surveyjs-widgets";
 
-SurveyJSCreator.StylesManager.applyTheme("orange");
-
-// SurveyJSCreator.Serializer.addProperty("file", {
-//   "name": "question4",
-//              "type": "picture",
-//              "title": "Fotos de Daño",
-//              "isRequired": true,
-//              "maxPictures": 4,
-//              "minPictures": 1
-// });
+SurveyJSCreator.StylesManager.applyTheme("default");
 
 widgets.icheck(SurveyKo, $);
 widgets.select2(SurveyKo, $);
@@ -39,7 +31,10 @@ widgets.signaturepad(SurveyKo);
 
 
 class SurveyCreator extends Component {
+  
   surveyCreator;
+
+  
   componentDidMount() {
     let options = {
       showEmbededSurveyTab: false,
@@ -48,19 +43,31 @@ class SurveyCreator extends Component {
       showPropertyGrid: true,
       showJSONEditorTab: false,
       isAutoSave: true,
-      showState: true
-
-
+      showState: true,
+      
+      
     };
 
+    
     this.surveyCreator = new SurveyJSCreator.SurveyCreator(
       "surveyCreatorContainer",
-      options,
+      options,   );
 
 
+    
+     this.surveyCreator.toolbox.addItem({
+        name: "countries",
+        copiedItems:"file",
+        isCopied: true,
+        iconName: "icon-default",
+        title: "File Photo",
+        type:"file",
+        json: {
+          
+            
+        }
+    });
 
-
-    );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
 
 
@@ -73,19 +80,12 @@ class SurveyCreator extends Component {
   saveMySurvey = () => {
     //console.log(JSON.stringify(this.surveyCreator.text));
     //console.log(this.surveyCreator.text);
-
-
     const payload = {
-
-      surveyId: 'Prueba',
+       surveyId: 'Prueba',
       surveyText: this.surveyCreator.text
-
-
     };
-
-    localStorage.setItem('Prueba', JSON.stringify(payload));
+  localStorage.setItem('Prueba', JSON.stringify(payload));
   };
-
 
 
 
