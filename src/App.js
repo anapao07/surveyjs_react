@@ -24,32 +24,15 @@ import "icheck/skins/square/blue.css";
 window["$"] = window["jQuery"] = $;
 require("icheck");
 
-export {MyQuestion} from "./MyQuestion";
+export { MyQuestion } from "./MyQuestion";
 
 Survey.StylesManager.applyTheme("default");
 
-widgets.icheck(Survey, $);
-widgets.select2(Survey, $);
-widgets.inputmask(Survey);
-widgets.jquerybarrating(Survey, $);
-widgets.jqueryuidatepicker(Survey, $);
-widgets.nouislider(Survey);
-widgets.select2tagbox(Survey, $);
-widgets.signaturepad(Survey);
-widgets.sortablejs(Survey);
-widgets.ckeditor(Survey);
-widgets.autocomplete(Survey, $);
-widgets.bootstrapslider(Survey);
-Survey.Serializer.addProperty("Prueba",{
-  "name": "question4",
-  "type": "picture",
-  "title": "Fotos de Daño",
-  "isRequired": true,
-  "maxPictures": 4,
-  "minPictures": 1
-});
 class App extends Component {
- 
+
+
+
+
   onValueChanged(result) {
     console.log("value changed!");
   }
@@ -57,10 +40,11 @@ class App extends Component {
   onComplete(result) {
     console.log("Complete! " + result);
   }
-  
+
 
   render() {
     const tempJson = JSON.parse(localStorage.getItem('Prueba')).surveyText;
+
     var model = new Survey.Model(tempJson);
     return (
       <div className="App">

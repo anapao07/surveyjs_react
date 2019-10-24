@@ -20,7 +20,16 @@ import "icheck/skins/square/blue.css";
 
 import * as widgets from "surveyjs-widgets";
 
-SurveyJSCreator.StylesManager.applyTheme("default");
+SurveyJSCreator.StylesManager.applyTheme("orange");
+
+// SurveyJSCreator.Serializer.addProperty("file", {
+//   "name": "question4",
+//              "type": "picture",
+//              "title": "Fotos de Daño",
+//              "isRequired": true,
+//              "maxPictures": 4,
+//              "minPictures": 1
+// });
 
 widgets.icheck(SurveyKo, $);
 widgets.select2(SurveyKo, $);
@@ -29,35 +38,34 @@ widgets.signaturepad(SurveyKo);
 
 
 
-
-
 class SurveyCreator extends Component {
   surveyCreator;
   componentDidMount() {
-    let options = { 
+    let options = {
       showEmbededSurveyTab: false,
       showTranslationTab: false,
       showLogicTab: false,
       showPropertyGrid: true,
       showJSONEditorTab: false,
       isAutoSave: true,
-      showState :true
-      
-      
-  };
-   
+      showState: true
+
+
+    };
+
     this.surveyCreator = new SurveyJSCreator.SurveyCreator(
       "surveyCreatorContainer",
       options,
-     
-      
-      
+
+
+
+
     );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
-    
-    
+
+
   }
-  
+
   render() {
     return <div id="surveyCreatorContainer" />;
   }
@@ -65,21 +73,22 @@ class SurveyCreator extends Component {
   saveMySurvey = () => {
     //console.log(JSON.stringify(this.surveyCreator.text));
     //console.log(this.surveyCreator.text);
-    
- 
+
+
     const payload = {
-      
+
       surveyId: 'Prueba',
-      surveyText : this.surveyCreator.text
-      
+      surveyText: this.surveyCreator.text
+
+
     };
-   
+
     localStorage.setItem('Prueba', JSON.stringify(payload));
   };
 
 
 
-  
+
 }
 
 export default SurveyCreator;
