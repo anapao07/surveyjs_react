@@ -25,15 +25,10 @@ SurveyJSCreator.StylesManager.applyTheme("default");
 widgets.icheck(SurveyKo, $);
 widgets.select2(SurveyKo, $);
 widgets.inputmask(SurveyKo);
-widgets.jquerybarrating(SurveyKo, $);
-widgets.jqueryuidatepicker(SurveyKo, $);
-widgets.nouislider(SurveyKo);
-widgets.select2tagbox(SurveyKo, $);
 widgets.signaturepad(SurveyKo);
-widgets.sortablejs(SurveyKo);
-widgets.ckeditor(SurveyKo);
-widgets.autocomplete(SurveyKo, $);
-widgets.bootstrapslider(SurveyKo);
+
+
+
 
 
 class SurveyCreator extends Component {
@@ -50,14 +45,16 @@ class SurveyCreator extends Component {
       
       
   };
-  
- 
+   
     this.surveyCreator = new SurveyJSCreator.SurveyCreator(
       "surveyCreatorContainer",
-      options
+      options,
+     
+      
       
     );
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
+    
     
   }
   
@@ -76,7 +73,7 @@ class SurveyCreator extends Component {
       surveyText : this.surveyCreator.text
       
     };
-  
+   
     localStorage.setItem('Prueba', JSON.stringify(payload));
   };
 
