@@ -54,6 +54,7 @@ class App extends Component {
           <h1>SurveyJS library in action:</h1>
           <div id="surveyElement"></div>
           <Survey.Survey
+          
             model={model}
             onComplete={this.onComplete}
             onValueChanged={this.onValueChanged}

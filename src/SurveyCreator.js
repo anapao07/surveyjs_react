@@ -55,18 +55,24 @@ class SurveyCreator extends Component {
 
 
     
-     this.surveyCreator.toolbox.addItem({
-        name: "countries",
-        copiedItems:"file",
-        isCopied: true,
-        iconName: "icon-default",
-        title: "File Photo",
-        type:"file",
-        json: {
-          
-            
-        }
-    });
+      this.surveyCreator
+      .toolbox
+      .addItem({
+          name: "countries",
+          isCopied: true,
+          iconName: "icon-default",
+          title: "FILE PICTURE",
+          json: {
+              "type": "file",
+              "name":"file",
+              "title":"Foto de Daño"
+             
+              
+          }
+      });
+
+
+      
 
     this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
 
