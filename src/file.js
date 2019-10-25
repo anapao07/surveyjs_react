@@ -64,7 +64,8 @@
 //             reader.readAsDataURL(new File([xhr.response], options.fileValue.name, {type: options.fileValue.type}));
 //         };
 //         xhr.send();
-       
 //     });
 
-// ReactDOM.render(<Survey.Survey model={survey}/>, document.getElementById("surveyElement"));
+
+
+// $("#surveyElement").Survey({model: survey});

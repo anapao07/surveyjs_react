@@ -41,7 +41,7 @@ class SurveyCreator extends Component {
       showTranslationTab: false,
       showLogicTab: false,
       showPropertyGrid: true,
-      showJSONEditorTab: false,
+      showJSONEditorTab: true,
       isAutoSave: true,
       showState: true,
       
@@ -54,9 +54,9 @@ class SurveyCreator extends Component {
       options,   );
 
 
-    
+  
       this.surveyCreator
-      .toolbox
+.toolbox
       .addItem({
           name: "countries",
           isCopied: true,
@@ -65,9 +65,12 @@ class SurveyCreator extends Component {
           json: {
               "type": "file",
               "name":"file",
-              "title":"Foto de Daño"
+              "title":"Foto de Daño",
+              "isRequired": true,
+              "maxPictures": 4,
+              "minPictures": 1
              
-              
+      
           }
       });
 
