@@ -28,6 +28,25 @@ export { MyQuestion } from "./MyQuestion";
 
 Survey.StylesManager.applyTheme("default");
 
+
+widgets.icheck(Survey, $);
+widgets.select2(Survey, $);
+widgets.inputmask(Survey);
+widgets.signaturepad(Survey);
+
+// FIXME: Eliminar los comentarioss
+// Survey.Serializer.addProperty("Prueba",{
+//   "name": "question4",
+//   "type": "picture",
+//   "title": "Fotos de Daño",
+//   "isRequired": true,
+//   "maxPictures": 4,
+//   "minPictures": 1
+// });
+
+
+
+
 class App extends Component {
 
   onValueChanged(result) {
