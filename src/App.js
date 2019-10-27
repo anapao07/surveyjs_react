@@ -59,7 +59,27 @@ class App extends Component {
 
 
   render() {
-    const tempJson = JSON.parse(localStorage.getItem('Prueba')).surveyText;
+    // var tempJson = JSON.parse(localStorage.getItem('Prueba')).surveyText;
+    // console.log(tempJson)
+    // var tempJson = JSON.parse(tempJson)
+    // for (const key of Object.keys(tempJson.pages[0].elements)) {
+    //   // console.log(key, tempJson.pages[0].elements[key].type);
+    //   if (tempJson.pages[0].elements[key].type == "file") {
+    //     tempJson.pages[0].elements[key].type = "picture";
+    //   }
+    // }
+
+    // tempJson = JSON.stringify(tempJson)
+    var tempJson = JSON.parse(localStorage.getItem('Prueba'));  
+    var tempJson = JSON.parse(tempJson['surveyText']);
+    for (const key of Object.keys(tempJson.pages[0].elements)) {
+      // console.log(key, tempJson.pages[0].elements[key].type);
+      if (tempJson.pages[0].elements[key].type == "file") {
+        tempJson.pages[0].elements[key].type = "picture";
+      }
+    }
+    console.log(tempJson);
+
 
     var model = new Survey.Model(tempJson);
     return (
@@ -73,7 +93,7 @@ class App extends Component {
           <h1>SurveyJS library in action:</h1>
           <div id="surveyElement"></div>
           <Survey.Survey
-          
+
             model={model}
             onComplete={this.onComplete}
             onValueChanged={this.onValueChanged}
